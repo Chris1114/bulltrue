@@ -158,7 +158,6 @@ button {
     top: 65%;
     transform: translateX(-50%);
     color: #555;
-    background: rgba(62, 20, 20, 0.4);
     border: none;
     font-family: Lato;
     font-size: 30px;
@@ -196,7 +195,6 @@ buttonb {
     top: 65%;
     transform: translateX(-50%);
     color: #555;
-    background: rgba(62, 20, 20, 0.4);
     border: none;
     font-family: Lato;
     font-size: 30px;
@@ -234,7 +232,6 @@ buttonx {
     top: 75%;
     transform: translateX(-50%);
     color: #555;
-    background: rgba(62, 20, 20, 0.4);
     border: none;
     font-family: Lato;
     font-size: 30px;
