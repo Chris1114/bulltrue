@@ -167,12 +167,6 @@ button {
     transition: background-color 0.3s, color 0.3s;
 }
 
-button:hover { font-weight: 800; }
-button:hover i { margin-right: 20px; }
-
-button:focus {
-    outline: none;
-}
 
 i {
     color: #EB4D4D;
@@ -202,13 +196,6 @@ buttonb {
     cursor: pointer;
     font-weight: 500;
     transition: background-color 0.3s, color 0.3s;
-}
-
-buttonb:hover { font-weight: 800; }
-buttonb:hover j { margin-right: 20px; }
-
-buttonb:focus {
-    outline: none;
 }
 
 j {
