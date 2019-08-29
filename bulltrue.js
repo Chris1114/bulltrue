@@ -15,7 +15,7 @@ const playerAnswers=[];
  questionsQueue.push('In accordance with his wishes, comedian George Carlin\'s ashes were encapsulated and fired from a cannon into the Pacific Ocean');
  answerQueue.push('false');
  correct.push('Good job! Didn\'t happen. But it was in one of his bits.');
- incorrect.push('Sorry. Didn\'t happen. Do you also believe that Texas has so many executions that they have to use electric couches?');
+ incorrect.push('Sorry. Didn\'t happen. Do you also believe that Texas has so many executions that they have to use electric couches? Because that\'s another one of his jokes.');
    
                 
  questionsQueue.push('The company Tesla instructs its employees and customers to use \"Teslae\" for the plural form of \"Tesla\"');
@@ -36,7 +36,7 @@ const playerAnswers=[];
  incorrect.push('Nope, he was real. And a real jerk.');
  
                 
- questionsQueue.push('The name Jack Daniel\'s is a masculinized version of the name of creator Jacquelline Danielle Motlow');
+ questionsQueue.push('The name Jack Daniel\'s was created to obscure the fact that it was created by a woman, Jacquelline Danielle Motlow');
  answerQueue.push('false');
  correct.push('Extremely false. Of course Jack Daniel\'s was created by Jack Daniel.');
  incorrect.push('Seriously? You\'re one of the 2% that miss that one. What\'s the opposite of elite?');
@@ -94,9 +94,9 @@ function nextRound() {
         if (numCorrect === numWrong) {
                 document.querySelector('.current-fact-box').textContent = 'Game Over. Half wrong half right, which makes you 100% average. Yawn. The wooden object you are most like is a ping-pong paddle...Functional, but only useful in the right hands';
         } else if (numCorrect > numWrong) {
-                document.querySelector('.current-fact-box').textContent = 'Game Over. Congratulations, you got more right than wrong. The wooden object you are most like is a toothpick...Efficient, effective, boring.';
+                document.querySelector('.current-fact-box').textContent = 'Game Over. Congratulations, you got more right than wrong. The wooden object you are most like is a Fender Stratocaster! Way to rock it!';
         } else if (numWrong > numCorrect) {
-                document.querySelector('.current-fact-box').textContent = 'Wow, ' + numWrong + 'misses. We regret to inform you that the turnip truck will not be coming back for you. Please do not make important decisions on your own.'; 
+                document.querySelector('.current-fact-box').textContent = 'Wow, ' + numWrong + ' misses. We regret to inform you that the turnip truck will not be coming back for you. Please do not make important decisions on your own. The wooden object you are most like is splinter'; 
         }
     
 } else {
