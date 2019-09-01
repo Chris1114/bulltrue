@@ -84,30 +84,42 @@ var cyn = 0;
 
 init();
 
+
+
 //Next round**********************************************
 function nextRound() {
     round +=1;
-      if (round > 11) {
-    document.querySelector('.btn-bulltrue').style.display = 'none';
-    document.querySelector('.btn-bull').style.display = 'none';
-    document.querySelector('.btn-next').style.display = 'none'; 
-        if (numCorrect === numWrong) {
-                document.querySelector('.current-fact-box').textContent = 'Game Over. Half wrong half right, which makes you 100% average. Yawn. The wooden object you are most like is a ping-pong paddle...Functional, but only useful in the right hands';
-        } else if (numCorrect > numWrong) {
-                document.querySelector('.current-fact-box').textContent = 'Game Over. Congratulations, you got more right than wrong. The wooden object you are most like is a Fender Stratocaster! Way to rock it!';
-        } else if (numWrong > numCorrect) {
-                document.querySelector('.current-fact-box').textContent = 'Wow, ' + numWrong + ' misses. We regret to inform you that the turnip truck will not be coming back for you. Please do not make important decisions on your own. The wooden object you are most like is splinter'; 
+      if (round ==12) {
+          document.querySelector('.btn-bulltrue').style.display = 'none';
+          document.querySelector('.btn-bull').style.display = 'none';
+          document.querySelector('.btn-next').style.display = 'none';
+          document.querySelector('.score-box').style.display = 'none';
+          document.querySelector('.score-text').style.display = 'none';
+        if (numCorrect <= 3) {
+            document.querySelector('.current-fact-box').textContent = 'Game Over. ' + numWrong + ' wrong...oops. We regret to inform you that the cabbage truck will not be returning for you.';
+
+        } else if (numCorrect > 3 && numCorrect < 7) {
+            document.querySelector('.current-fact-box').textContent = 'Game Over. ' + numWrong + ' wrong...oops. Didn\'t exactly kill it. Please don\'t make decisions for yourself in the world.';
+ 
+        } else if (numCorrect > 6 && numCorrect < 10) {
+            document.querySelector('.current-fact-box').textContent = numCorrect + ' right...Not too shabby, but you are still vulnerable. Proceed with caution. ';
+
+        } else if (numCorrect > 9 && numCorrect < 12) {
+            document.querySelector('.current-fact-box').textContent = numCorrect + ' correct anwsers. You are an excellent BS sniffer, very useful, among the best. Maybe you\'ve been burned a couple times? It takes that to score this high.';
+
+        } else if (numCorrect === 12) {
+            document.querySelector('.current-fact-box').textContent = '12 for 12...Perfect score! You can\'t argue with results. You are a shining example of evolution gone right.'; 
         }
     
-} else {
-    document.querySelector('.btn-bulltrue').style.display = 'block';
-    document.querySelector('.btn-bull').style.display = 'block';
-    document.querySelector('.btn-next').style.display = 'none';
-    document.querySelector('.current-fact-box').textContent = questionsQueue[round];
-    document.querySelector('.btn-bull').addEventListener('click', submitFalse);
-    document.querySelector('.btn-bulltrue').addEventListener('click', submitTrue);
+        } else {
+        document.querySelector('.btn-bulltrue').style.display = 'block';
+        document.querySelector('.btn-bull').style.display = 'block';
+        document.querySelector('.btn-next').style.display = 'none';
+        document.querySelector('.current-fact-box').textContent = questionsQueue[round];
+        document.querySelector('.btn-bull').addEventListener('click', submitFalse);
+        document.querySelector('.btn-bulltrue').addEventListener('click', submitTrue);
+        }
     }
-}
 
 
 //Player clicked Bulltrue**********************************
@@ -153,12 +165,12 @@ function submitFalse() {
 
     function init () {
         round = 0;
-    document.querySelector('.btn-bulltrue').style.display = 'block';
-    document.querySelector('.btn-bull').style.display = 'block';
-    document.querySelector('.btn-next').style.display = 'none';
-    document.querySelector('.current-fact-box').textContent = questionsQueue[round];
-    document.querySelector('.btn-bull').addEventListener('click', submitFalse);
-    document.querySelector('.btn-bulltrue').addEventListener('click', submitTrue);
+        document.querySelector('.btn-bulltrue').style.display = 'block';
+        document.querySelector('.btn-bull').style.display = 'block';
+        document.querySelector('.btn-next').style.display = 'none';
+        document.querySelector('.current-fact-box').textContent = questionsQueue[round];
+        document.querySelector('.btn-bull').addEventListener('click', submitFalse);
+        document.querySelector('.btn-bulltrue').addEventListener('click', submitTrue);
     }
     
     
