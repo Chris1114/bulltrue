@@ -179,7 +179,10 @@ i {
 }
 
 
-.btn-bulltrue { bottom: 500px;}
+.btn-bulltrue { 
+    bottom: 550px;
+    left: 60%;
+}
 
 buttonb {
     position: absolute;
@@ -209,7 +212,10 @@ j {
 }
 
 
-.btn-bull { bottom: 500px;}
+.btn-bull { 
+    bottom: 550px;
+    left: 40%;
+}
 
 buttonx {
     position: absolute;
