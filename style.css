@@ -42,9 +42,10 @@ body {
     width: 20%;
     text-align: center;
     font-size: 80px;
-    font-weight: 300;
+    font-weight: 700;
     color: #EB4D4D;
     margin-bottom: 300px;
+    border: 0px dashed purple;
 }
 
 .index-title {
@@ -57,6 +58,7 @@ body {
     font-weight: 1000;
     color: #EB4D4D;
     margin-bottom: 300px;
+    border: 0px dashed light blue;
 }
 
 
@@ -73,6 +75,7 @@ body {
     font-size: 28px;
     font-weight: 600;
     text-align: center;
+    border: 0px solid orange;
 }
 
 .fact-text {
@@ -84,6 +87,7 @@ body {
     margin-top: 20px;
     margin-bottom: 10px;
     position: relative;
+    border: 0px solid black;
 }
 
 
@@ -121,12 +125,14 @@ body {
     margin-top: 20px;
     margin-bottom: 10px;
     position: relative;
+    border: 0px dashed red;
 }
 
 
 .score-box{
     position: absolute;
-    left: 38%;
+    text-align: center;
+    left: 40%;
     bottom: 2%;
     background-color: #EB4D4D;
     color: #fff;
@@ -136,7 +142,8 @@ body {
     font-family: Lato;
     font-size: 20px;
     font-weight: 400;
-    text-align: center;
+    border: 0px solid green;
+
 }
 
 .score-text {
@@ -151,13 +158,10 @@ body {
 }
 
 button {
-    position: absolute;
-    width: 300px;
-    right: 20%;
-    top: 65%;
+    
     transform: translateX(-50%);
     color: #555;
-    border: none;
+    border: 0px dashed green;
     font-family: Lato;
     font-size: 30px;
     text-transform: uppercase;
@@ -178,20 +182,33 @@ i {
     transition: margin 0.3s;
 }
 
-
-.btn-bulltrue { 
-    bottom: 550px;
-    left: 64%;
-}
-
-buttonb {
+.btn-bull { 
+    text-align: center;
+    width:20%;
     position: absolute;
-    width: 300px;
-    left: 42%;
+    left: 25%;
     top: 65%;
     transform: translateX(-50%);
     color: #555;
-    border: none;
+    border: 1px solid #EB4D4D;
+    font-family: Lato;
+    font-size: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.btn-bulltrue { 
+    text-align: center;
+    width:20%;
+    position: absolute;
+    left: 75%;
+    top: 65%;
+    transform: translateX(-50%);
+    color: #555;
+    border: 1px solid #EB4D4D;
     font-family: Lato;
     font-size: 30px;
     text-transform: uppercase;
@@ -212,26 +229,7 @@ j {
 }
 
 
-.btn-bull { 
-    bottom: 550px;
-    left: 36%;
-}
 
-buttonx {
-    position: absolute;
-    width: 300px;
-    left: 56%;
-    top: 75%;
-    transform: translateX(-50%);
-    color: #555;
-    border: none;
-    font-family: Lato;
-    font-size: 30px;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.3s, color 0.3s;
-}
 
 buttonx:hover { font-weight: 800; }
 buttonx:hover j { margin-right: 20px; }
@@ -251,7 +249,22 @@ j {
     transition: margin 0.3s;
 }
 
-.btn-next { bottom: 500px;}
+.btn-next {
+    position: absolute;
+    width: 30%;
+    height: 50px;
+    left: 50%;
+    bottom: 150px;
+    text-align: center;
+    color: #555;
+    border: 1px solid #EB4D4d;
+    font-family: Lato;
+    font-size: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
 
 
 
