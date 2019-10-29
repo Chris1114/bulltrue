@@ -4,28 +4,48 @@
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
         <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
-        <link type="text/css" rel="stylesheet" href="style.css">
+        <link type="text/css" rel="stylesheet" href="split.css">
         
         <title>BullTrue</title>
     </head>
 
     <body>
-       
-        <div class="index-title">Lucky you...It's time to play BullTrue</div>
-            <div class="index-intro">
-                <div class="index-intro-text" id="fact">            
-                           <h3>
-            Since the dawn of man, human beings have been natural liars. It started with hunting...The better you were at deception, the better you and your family ate, the better chance you had of passing your liar genes forward. </br></br>
-                Man's relatively recent mastery over his environment has made this ability to deceive unnecessary. We are hunters no more. Evolution, however, doesn't stop on a dime. It is estimated that people lie up to 3 times in a 10-minute conversation. Development of lying in four-year-olds is considered normal. We elect leaders knowing full well that they lie...We just try to pick the one that lies the least. Lying is alive and well, hanging in there better than our vanishing pinky toes.</br></br>
-    In this world full of liars, the ability to sniff out BS has become the survival skill. BullTrue is designed to put your lie detection skills to the test. 
-        <h3>
-            </br> You will be presented with a series of 12 statements of incredible FACT. Simply read the statement and decide whether you think it is true BULL or BullTRUE.</br></br>
- <h2>How good are you at sniffing out BS? <a href = gameWindow.html>Play BullTrue</a> to find out...</br>
         
+            <section class="container">
+                    <div class="left-half" id="btn-bull">BULL
+                    </div>
+                    <div class="right-half" id="btn-true">TRUE
+                    </div>
+                </section>     
+
+    <div class="results-box" id="results-box">Correct: <span id="right">mama</span>
+        <br>Missed: <span id="wrong">mama</span>
+        <br>You believed <span id="gull">mama</span><span> lie(s)</span>
+        <br>You disbelieved <span id="cyn">mama</span><span> fact(s)</span>
+        <br>You called Bull <span id="bull">mama</span><span> times</span>
+        <br>You called True <span id="true">mama</span><span> times</span>
+    </div>
     
-           
-</div>
-        </div>
-      </body>
-    
-</html
+    <div class="fact-box-1" id="fact-box-1">
+        Fact Box 1
+    </div> 
+
+    <div class="fact-box-2" id="fact-box-2">
+        Fact Box 2
+    </div>
+
+    <div>
+            <button class="btn-next" id="btn-next">NEXT<br> FACT</button>
+           <button class="btn-results" id="btn-results">RESULTS</button>
+           </div> 
+        
+    <div class="score-box" id="score-box">
+                
+     <div class="score-text" id="fact">SCORE: 100%</div>
+
+
+
+<script src="bulltrue.js"></script>
+        
+</body>
+</html>
