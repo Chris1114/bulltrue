@@ -184,6 +184,11 @@
   line-height: .8;
 }
 
+
+.red-text {
+    color: red;
+}
+
 .score-text {
   font-size: 3vw;
   text-align: center;
