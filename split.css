@@ -331,7 +331,7 @@ h1 {
 
 
 .btn-border {
-  border: 2px solid blue;
+  border: 5px solid blue;
   border-style: inset;
   transition: 300ms;
 }
