@@ -45,7 +45,7 @@
   border: 2px solid black;
   padding: 10px 10px 10px 10px;
   box-shadow: 2px 2px 2px;
-  line-height: normal;
+  line-height: 2.5vw;
 }
 
 
@@ -70,9 +70,14 @@
   border: 2px solid black;
   padding: 10px 10px 10px 10px;
   box-shadow: 2px 2px 2px;
-  line-height: normal;
+  line-height: 2.5vw;
 }
 
+
+.dim-out {
+  opacity: 0.75;
+  transition: 300ms;
+}
 
 .answer-box {
   margin: auto;
@@ -95,7 +100,7 @@
   border: 2px solid black;
   padding: 10px 10px 10px 10px;
   box-shadow: 2px 2px 2px;
-  line-height: normal;
+  line-height: 2.75vw;
 }
 
 
@@ -184,6 +189,12 @@
   line-height: .8;
 }
 
+
+.red-text {
+  color: red;
+}
+
+
 .score-text {
   font-size: 3vw;
   text-align: center;
@@ -209,7 +220,7 @@
   color: black;
   border: 1px solid black;
   font-family: 'Staatliches', cursive;  
-  font-size: 3rem;
+  font-size: 4vw;
   text-transform: uppercase;
   cursor: pointer;
   font-weight: 500;
@@ -230,12 +241,12 @@
   color: black;
   border: 4px solid black;
   font-family: 'Staatliches', cursive;  
-  font-size: 3rem;
+  font-size: 4vw;
   text-transform: uppercase;
   cursor: pointer;
   font-weight: 500;
   transition: background-color 0.3s, color 0.3s;
-  line-height: 40px;
+  line-height: 2.9vw;
 }
 
 .btn-results {
@@ -342,10 +353,10 @@ h1 {
   right: 0%;
   bottom: 10%;
   color: #F0F2F2  ;
-  opacity: .07;
+  opacity: .08;
   font-size: 12vw;
   font-family: 'Staatliches', cursive;
-  transition: 1000ms; 
+  transition: 600ms ease-out; 
 }
 
 .true-text {
@@ -353,10 +364,10 @@ h1 {
   position: absolute;
   bottom: 10%;  
   color: #F0F2F2;
-  opacity: .07;
+  opacity: .1;
   font-size: 12vw;
   font-family: 'Staatliches', cursive;
-  transition: 1000ms; 
+  transition: 600ms ease-out; 
 }
 
 /*********Correct/Incorrect states*****************************/
@@ -371,7 +382,7 @@ h1 {
 
 .text-selected {
   opacity:.7;
-  transition: 300ms;
+  transition: 50ms;
 }
 
 

@@ -6,41 +6,41 @@ function Question(fact, answer, yep, nope) {
 
 }
 
-var q1 = new Question('FACT: Research suggests that 20% of Neanderthal DNA survives in modern humans', 'true', 'YEP, STILL KICKING AROUND', 'WRONG...THEY\'RE STILL HERE');
+var q1 = new Question('FACT: Research suggests that 20% of Neanderthal DNA survives in modern humans', 'true', 'YEP, NEANDERTHALS ARE STILL KICKING AROUND', 'WRONG...THAT\S ACTUALLY TRUE');
 
-var q2 = new Question('FACT: In accordance with his wishes, comedian George Carlin\'s ashes were encapsulated and fired from a cannon into the Pacific Ocean', 'false', 'INDEED THAT IS BULL', 'NOPE.DIDN\'T HAPPEN' );
+var q2 = new Question('FACT: In accordance with his wishes, comedian George Carlin\'s ashes were encapsulated and fired from a cannon into the Pacific Ocean', 'false', 'INDEED THAT IS BULL', 'NOPE...DIDN\'T HAPPEN' );
                 
-var q3 = new Question('FACT: The company Tesla instructs its employees and customers to use \"Teslae\" for the plural form of \"Tesla\"', 'false', 'VERY GOOD', "SORRY...ELON\'S NOT THAT WEIRD");
+var q3 = new Question('FACT: The company Tesla instructs its employees and customers to use \"Teslae\" for the plural form of \"Tesla\"', 'false', 'CORRECT!', "WRONG...ELON\'S NOT THAT WEIRD");
 
-var q4 = new Question('FACT: Humans share 50% of their DNA with bananas', 'true','THAT IS CORRECT', 'NOPE, TRUE');   
+var q4 = new Question('FACT: Humans share 50% of their DNA with bananas', 'true','THAT IS CORRECT', 'NOPE, IT\'S ACTUALLY TRUE');   
 
 var q5 = new Question('FACT: There actually was a Captain Morgan. He was known for ransacking Spanish ships in the Caribbean in the 1660\'s and 1670\'s.', 'true', 'CORRECT!!!', 'NOPE, THAT WAS TRUE');
 
 var q6 = new Question('FACT: Jack Daniel\'s was named after the independently wealthy woman who financed its launch: Jacquelline Danielle Motlow', 'false', 'GOOD BS SNIFFING', 'SORRY...TOTAL BULL'); 
 
-var q7 = new Question('FACT: In 1989 a panda at the Shanghai Zoo died of spontaneous combustion', 'false', 'A FAMOUS LIE', 'YOU BOUGHT THAT?');
+var q7 = new Question('FACT: In 1989 a panda at the Shanghai Zoo died of spontaneous combustion', 'false', 'WELL DONE. A COMPLETE LIE', 'YOU BOUGHT THAT?');
 
-var q8 = new Question('FACT: Ravens in captivity can learn to \"talk\" better than parrots', 'true', 'WELL DONE', 'NO, THAT\'S TRUE');
+var q8 = new Question('FACT: Ravens in captivity can learn to \"talk\" better than parrots', 'true', 'TRUE...WELL DONE!', 'NO, THAT\'S TRUE');
  
-var q9 = new Question('FACT: A group of barracudas is called a battery', 'true', 'GOOD JOB', 'NOPE. THEY ARE A BATTERY');                
+var q9 = new Question('FACT: A group of barracudas is called a battery', 'true', 'GOOD JOB', 'NOPE. THEY ARE A BATTERY OF BARRACUDAS');                
 
-var q10 = new Question('FACT: Due to feuding brothers, the can opener was patented 5 years before the tin can', 'false', 'NICE WORK', 'NOPE...GOTCHA!');
+var q10 = new Question('FACT: Due to feuding brothers, the can opener was patented 5 years before the tin can', 'false', ' CORRECT...NICE WORK!', 'SERIOUSLY?');
 
-var q11 = new Question('FACT: The world consumes about 6700 aluminum cans per second', 'true', 'YES. PER SECOND', 'SORRY THAT\'S TRUE');
+var q11 = new Question('FACT: The world consumes about 6700 aluminum cans per second', 'true', 'YES. PER SECOND.', 'SORRY THAT\'S TRUE');
                 
-var q12 = new Question('FACT: John William\'s iconic Star Wars theme was originally written for an abandoned movie that later became "Cowboys vs. Aliens"', 'false', 'GOOD SHOT!', 'CAN\'T WIN \'EM ALL');
+var q12 = new Question('FACT: John William\'s iconic Star Wars theme was originally written for a movie that was shelved and later became "Cowboys vs. Aliens"', 'false', 'GOOD SHOT!', 'CAN\'T WIN \'EM ALL');
 
-var q13 = new Question('FACT: Ants outweigh humans on the planet', 'true', 'YEP. THAT\'S A LOT OF ANTS');
+var q13 = new Question('FACT: Ants outweigh humans on the planet', 'true', 'YEP. THAT\'S A LOT OF ANTS', 'WRONG...THEY OUTNUMBER US AND OUTWEIGH US');
 
-var q14 = new Question('FACT: President Warren Harding was born with two pinky toes on each foot, which were removed shortly after his birth', 'false','NOWHERE NEAR TRUE', 'NOWHERE NEAR TRUE' );
+var q14 = new Question('FACT: President Warren Harding was born with two pinky toes on each foot, which were removed shortly after his birth', 'false','CORRECT...NOWHERE NEAR TRUE', 'NOWHERE NEAR TRUE' );
 
 var q15 = new Question('FACT: Twisted Sister frontman Dee Snider got his start singing backup vocals for artists such as Hall and Oats and Jackson Browne', 'false', 'CORRECT!!!', 'HALL AND OATS? REALLY?');
 
 var q16 = new Question('FACT: Carly Simon and Paul Simon are cousins and are the neice and nephew of Richard Simon of Simon and Schuster', 'false', 'CORRECT YOU ARE', 'NOPE, IT\'S BULL');
 
-var q17 = new Question('FACT: There is an island off of Samoa where the likelihood of cojoined twins is triple that of the rest of the world', 'false', 'GREAT SHOT', 'FALSE...GOTCHA!');
+var q17 = new Question('FACT: There is an island off of Samoa where the likelihood of cojoined twins is triple that of the rest of the world', 'false', 'GREAT SHOT', 'WE\'VE BEEN TRYING TO REACH YOU ABOUT YOUR AUOTOMOBILE\'S EXTENDED WARRANTY');
 
-var q18 = new Question('FACT: Casu Marzu cheese is purposely infested with maggots', 'true', 'TRUE...ALL TRUE', 'TRUE. UNFORTUNATELY');
+var q18 = new Question('FACT: Casu Marzu cheese is purposely infested with maggots', 'true', 'TRUE...ALL TRUE', 'TRUE...UNFORTUNATELY');
 
 var q19 = new Question('FACT: During the casting phase for the Lord of the Rings movies, Nicholas Cage turned down the role of Aragorn and Sean Connery turned down the role of Gandalf', 'true', 'CORRECT!', 'NO, THAT\'S TRUE');
 
@@ -67,34 +67,15 @@ var curSlump = 1;//stores current slump
 var lastResult = -1;//stores whether last answer was correct
 var streak = 1;//stores longest win streak
 var slump = 1;//stores longest slump
+var percentage;
 
 
 init();
 
 
-/*
-//answer[i] is true, button setup
-function answerTrue() {
-    document.getElementById('btn-true').addEventListener('click', trueCorrect);
-    document.getElementById('btn-bull').addEventListener('click', bullWrong);
-}              
-
-
-//answer[i] is false, button setup
-function answerFalse() {
-    document.getElementById('btn-bull').addEventListener('click', bullCorrect);
-    document.getElementById('btn-true').addEventListener('click', trueWrong);
- 
-}
-*/
-
-
-//when the answer is true and they click true(correct)
 
 function trueCorrect() {
-    //alert('TC called');
-
-    if (lastResult === 1) {
+         if (lastResult === 1) {
         curStreak ++;
     }
         if (curStreak > streak) {
@@ -102,8 +83,6 @@ function trueCorrect() {
         }
     curSlump = 1;
     lastResult = 1;
-    //console.log ('consecutive wins = ' + curStreak);
-    //console.log ('longest streak = '+ streak);
     numCorrect ++;
     clickedTrue ++;
     
@@ -111,6 +90,8 @@ function trueCorrect() {
     document.getElementById('btn-bull').classList.add('true-whole');
     document.querySelector('.answer-box').classList.remove('box-hide');
     document.querySelector('.answer-box').textContent = questionsQueue[round].yep;
+    document.getElementById('fact-box-1').classList.add('dim-out');
+    document.getElementById('fact-box-2').classList.add('dim-out');
     document.querySelector('.bull-text').classList.add('text-hide');
     document.querySelector('.true-text').classList.add('text-hide');
     btnNextReveal();
@@ -118,8 +99,6 @@ function trueCorrect() {
 
 //when the answer is true and they click bull(incorrect)
 function bullWrong() {
-    //alert('BW called');
- 
     if (lastResult === 0) {
         curSlump ++;
     }
@@ -128,8 +107,6 @@ function bullWrong() {
         }
     curStreak = 1;
     lastResult = 0;
-    console.log ('consecutive misses = ' + curSlump);
-    console.log ('longest slump = '+ slump);
     cyn ++;
     clickedBull ++;
     numWrong ++;
@@ -137,6 +114,8 @@ function bullWrong() {
     document.getElementById('btn-bull').classList.add('true-whole');
     document.querySelector('.answer-box').classList.remove('box-hide');
     document.querySelector('.answer-box').textContent = questionsQueue[round].nope;
+    document.getElementById('fact-box-1').classList.add('dim-out');
+    document.getElementById('fact-box-2').classList.add('dim-out');
     document.querySelector('.bull-text').classList.add('text-hide');
     document.querySelector('.true-text').classList.add('text-hide');
     btnNextReveal();
@@ -144,8 +123,6 @@ function bullWrong() {
 
 //when the answer is false and they click bull(correct)
 function bullCorrect() {
-    //alert('BC called');
-
     if (lastResult === 1) {
         curStreak ++;
     }
@@ -154,14 +131,14 @@ function bullCorrect() {
         }
     curSlump = 1;
     lastResult = 1;
-    console.log ('consecutive wins = ' + curStreak);
-    console.log ('longest streak = '+ streak);    
     clickedBull ++;
     numCorrect ++;
     document.getElementById('btn-bull').classList.remove('btn-border');
     document.getElementById('btn-true').classList.add('bull-whole');
     document.querySelector('.answer-box').classList.remove('box-hide');
     document.querySelector('.answer-box').textContent = questionsQueue[round].yep;
+    document.getElementById('fact-box-1').classList.add('dim-out');
+    document.getElementById('fact-box-2').classList.add('dim-out');
     document.querySelector('.true-text').classList.add('text-hide');
     document.querySelector('.bull-text').classList.add('text-hide');
     btnNextReveal();
@@ -169,8 +146,6 @@ function bullCorrect() {
 
 //when the answer is false and they click true(incorrect)
 function trueWrong() {
-    //alert('TW called');
-
     if (lastResult === 0) {
         curSlump ++;
     }
@@ -179,8 +154,6 @@ function trueWrong() {
         }
     curStreak = 1;
     lastResult = 0;
-    console.log ('consecutive misses = ' + curSlump);
-    console.log ('longest slump = '+ slump); 
     gull ++;
     clickedTrue ++;
     numWrong ++;
@@ -188,15 +161,13 @@ function trueWrong() {
     document.getElementById('btn-true').classList.add('bull-whole');
     document.querySelector('.answer-box').classList.remove('box-hide');
     document.querySelector('.answer-box').textContent = questionsQueue[round].nope;
+    document.getElementById('fact-box-1').classList.add('dim-out');
+    document.getElementById('fact-box-2').classList.add('dim-out');
     document.querySelector('.true-text').classList.add('text-hide');
     document.querySelector('.bull-text').classList.add('text-hide');
     btnNextReveal();
 }
 
-
-
-function percentage() {document.getElementById('score').textContent = (Math.ceil((numCorrect / (round + 1)) * 100) + ' %');
-}
 
 
 
@@ -264,9 +235,16 @@ function init() {
           
     
 
-
+//updates score, shows 'next fact' button, turns off other buttons
 function btnNextReveal() {
-    percentage();       
+    percentage = (Math.ceil((numCorrect / (round + 1)) * 100)); 
+    document.getElementById('score').textContent = percentage + ' %';  
+    if (percentage < 51 ) {
+        document.getElementById('score-box').classList.add('red-text');
+    } else {
+        document.getElementById('score-box').classList.remove('red-text');
+
+    }
     document.getElementById('btn-true').removeEventListener('click', trueCorrect);
     document.getElementById('btn-true').removeEventListener('click', trueWrong);
     document.getElementById('btn-bull').removeEventListener('click', bullCorrect);
@@ -277,13 +255,15 @@ function btnNextReveal() {
 }
 
 
-    //allows game to progress until round 10, gives choice of 10 more or results   
+    //checks round, allows game to progress until round 10, gives choice of 10 more or results   
 function roundCheck() {
     console.log(round); 
     if (round < 9) {
         resetter();
             
     } else if (round === 9) {
+        document.getElementById('fact-box-1').classList.remove('dim-out');
+        document.getElementById('answer-box').classList.add('box-hide');
         document.getElementById('fact-box-1').textContent = ('Think you can you do better? Click "NEXT FACT" to see if you can raise your average with 10 more \"facts\". Or click this box to get a breakdown of your answers.');
         document.querySelector('.fact-box-1').addEventListener('click', displayResults);
         document.querySelector('.btn-next').addEventListener('click', resetter);
@@ -302,7 +282,8 @@ function resetter() {
     document.getElementById('fact-box-2').classList.add('box-hide');
     document.getElementById('btn-next').style.display = 'none';
     document.getElementById('answer-box').classList.add('box-hide');
-   round ++;
+    round ++;
+
    delayer();
 }
 
@@ -334,6 +315,9 @@ document.querySelector('.bull-text').classList.remove('text-selected');
 document.querySelector('.true-text').classList.remove('text-selected');
 document.querySelector('.bull-text').classList.remove('text-hide');
 document.querySelector('.true-text').classList.remove('text-hide');
+document.getElementById('fact-box-1').classList.remove('dim-out');
+document.getElementById('fact-box-2').classList.remove('dim-out');
+
 
         }
 
