@@ -7,6 +7,6 @@ Codewise, I built this on an array of objects. I was hoping to expand my underst
 
 If nothing else, I succeeded in making the buttons bigger, as the are now half of the screen! I also added 10 more facts and made it select them in random order. After FACT #10 the game gives you the chance to either stop and see your stats or to take another 10 to improve your score. The score is now displayed as the percentage of correct answers.
 
-********************WHAT I COULDN'T GET TO WORK***********************
+WHAT I COULDN'T GET TO WORK
 1) In displayResults the player gets the choice to click the NEXT FACT button to keep playing or click the fact box to end and see their stats. I wanted that click to be anywhere in the fact box, but the event is onlt triggered by a click in the area outside the text. I gave the text an ID and tried several combinations of event listeners, nothing worked
 2) I want to put a timer on every round just to add a little urgency and prevent googling answers. Maybe a visible countdown from 10 but slower than seconds, or from 20 and faster than seconds (like the timers in Marioworld games). The idea was for the game to automatically submit an answerr of true if the player doesn't decide for them selves in time. I was able to display a countdown onscreen, but never got it to behave the way I wanted when the time ran out. There is something in the logic of setTimeout that I don't understand.
