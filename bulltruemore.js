@@ -60,8 +60,8 @@ var numCorrect = 0;
 var numWrong = 0;
 var clickedTrue = 0;
 var clickedBull = 0;
-var cyn = 0;
-var gul = 0;
+var cyn = 0;//cynical-bullWrong counter
+var gul = 0;//gullible-trueWrong counter
 var curStreak = 1;//stores current streak
 var curSlump = 1;//stores current slump
 var lastResult = -1;//stores whether last answer was correct
@@ -74,7 +74,7 @@ var answer;
 init();
 
 
-
+///////player clicked TRUE correctly
 function trueCorrect() {
          if (lastResult === 1) {
         curStreak ++;
@@ -98,7 +98,7 @@ function trueCorrect() {
     btnNextReveal();
 }
 
-//when the answer is true and they click bull(incorrect)
+///////player clicked BULL incorrectly
 function bullWrong() {
     if (lastResult === 0) {
         curSlump ++;
@@ -122,7 +122,7 @@ function bullWrong() {
     btnNextReveal();
 }
 
-//when the answer is false and they click bull(correct)
+///////player clicked BULL correctly
 function bullCorrect() {
     if (lastResult === 1) {
         curStreak ++;
@@ -145,7 +145,7 @@ function bullCorrect() {
     btnNextReveal();
 }
 
-//when the answer is false and they click true(incorrect)
+///////player clicked TRUE incorrectly
 function trueWrong() {
     if (lastResult === 0) {
         curSlump ++;
@@ -236,7 +236,7 @@ function btnNextReveal() {
         document.getElementById('score-box').classList.remove('red-text');
      }
      if (curStreak > 2) {
-         document.querySelector('.score-text').textContent = percentage + ' % | ' + curStreak + ' in a row!';
+         document.querySelector('.score-text').textContent = percentage + ' % ' + ' | ' + curStreak + ' in a row!';
      }
     document.getElementById('btn-true').removeEventListener('click', trueCorrect);
     document.getElementById('btn-true').removeEventListener('click', trueWrong);
@@ -249,7 +249,7 @@ function btnNextReveal() {
 }
 
 
-    //checks round, allows game to progress until round 10, gives choice of 10 more or results   
+    //checks round, allows game to progress until round === 9, gives choice of 10 more or see thei stats   
 function roundCheck() {
    
     if (round < 9) {
@@ -257,9 +257,9 @@ function roundCheck() {
     } else if (round === 9) {
         document.querySelector('.fact-box-1').classList.remove('dim-out');
         document.getElementById('answer-box').classList.add('box-hide');
-        //document.querySelector('.fact-box-1').addEventListener('click', displayResults);
+        document.getElementById('fact-box-1').addEventListener('click', displayResults);
         document.getElementById('fact-text-1').addEventListener('click', displayResults);
-        document.getElementById('fact-text-1').textContent = ('Think you can you do better? Click "NEXT FACT" to see if you can raise your average with 10 more \"facts\". Or click this box to get a breakdown of your answers.');
+        document.getElementById('fact-text-1').textContent = ('Think you can you do better? Click "NEXT FACT" to see if you can raise your score with 10 more. Or click this box to see your lie detection stats.');
         document.querySelector('.btn-next').addEventListener('click', resetter);
     } else if (round > 0 && round < 19) {
         document.querySelector('.btn-next').addEventListener('click', resetter);
