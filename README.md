@@ -5,4 +5,4 @@ I experimented a ton with button states and animations. Through most of developm
 
 Codewise, I built this on an array of objects. I was hoping to expand my understanding of objects, but it ended up not being very different from v1.0 The only real difference is teh syntax for accessing the values. I built in counters for stats and made the game a little bit more responsive to how the player is doing. 
 
-If nothing else, I succeeded in making the buttons bigger, as the are not half of the screen!
+If nothing else, I succeeded in making the buttons bigger, as the are now half of the screen! I also added 10 more facts and made it select them in random order. After FACT #10 the game gives you the chance to either stop and see your stats or to take another 10 to improve your score. The score is now displayed as the percentage of correct answers.
