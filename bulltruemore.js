@@ -236,7 +236,7 @@ function btnNextReveal() {
         document.getElementById('score-box').classList.remove('red-text');
      }
      if (curStreak > 2) {
-         document.querySelector('.score-text').textContent = percentage + ' % ' + ' | ' + curStreak + ' in a row!';
+         document.querySelector('.score-text').textContent = percentage + ' % ' + ' : ' + curStreak + ' in a row!';
      }
     document.getElementById('btn-true').removeEventListener('click', trueCorrect);
     document.getElementById('btn-true').removeEventListener('click', trueWrong);
@@ -314,7 +314,7 @@ document.querySelector('.fact-box-2').classList.remove('dim-out');
 
 
    function displayResults() {
-    document.getElementById('score').textContent = percentage + '% | ' + numCorrect + ' correct/' + numWrong +' wrong';        
+    document.getElementById('score').textContent = percentage + '% ... ' + numCorrect + ' correct/' + numWrong +' wrong';        
         document.getElementById('answer-box').style.display = 'none';
         document.getElementById('score-box').style.display = 'none';
         document.querySelector('.fact-box-1').style.display = 'none';
@@ -324,8 +324,8 @@ document.querySelector('.fact-box-2').classList.remove('dim-out');
        // document.getElementById('wrong').textContent = numWrong;
         document.getElementById('gul').textContent = gul;
         document.getElementById('cyn').textContent = cyn;
-        document.getElementById('gull').textContent = gul;
-        document.getElementById('cynn').textContent = cyn;
+        document.getElementById('wrong').textContent = numWrong;
+        document.getElementById('cyn').textContent = cyn;
         document.getElementById('true').textContent = clickedTrue;
         document.getElementById('bull').textContent = clickedBull;
     }
