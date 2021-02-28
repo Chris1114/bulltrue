@@ -15,8 +15,8 @@
   left: 10%;
   width: 80%;
   text-align: center;
-  font-size: 4vw;
-  font-weight: 1000;
+  /* font-size: 4vw;
+  font-weight: 1000; */
   color: #EB4D4D;
   margin-bottom: 300px;
   border: 0px dashed light blue;
@@ -37,13 +37,13 @@
 
 .index-intro-text {
   font-family: 'Fjalla One', sans-serif;
-  font-size: 3vw;
+  font-size: 6vw;
   text-align: center;
   font-weight: 800;
   margin-top: 20px;
   margin-bottom: 10px;
   position: relative;
-  line-height: 2vw;;
+  line-height: 5.8vw;;
 }
 
 .bull-text-index {
