@@ -15,8 +15,9 @@
   left: 10%;
   width: 80%;
   text-align: center;
-  /* font-size: 4vw;
-  font-weight: 1000; */
+  font-size: 4.5vw;
+  line-height: 4.2vw;;
+  font-weight: 1000;
   color: #EB4D4D;
   margin-bottom: 300px;
   border: 0px dashed light blue;
@@ -25,11 +26,11 @@
 
 .index-intro {
   position: absolute;
-  left: 10%;
-  top: 4%;
+  left: 5%;
+  top: 2%;
   background-color: #F28A2E;
   color: black;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   padding: 10px;
   text-align: center;
@@ -37,13 +38,13 @@
 
 .index-intro-text {
   font-family: 'Fjalla One', sans-serif;
-  font-size: 6vw;
+  font-size: 4vw;
+  line-height: 4.8vw;;
   text-align: center;
-  font-weight: 800;
+  font-weight: 100;
   margin-top: 20px;
   margin-bottom: 10px;
   position: relative;
-  line-height: 5.8vw;;
 }
 
 .bull-text-index {
@@ -117,17 +118,6 @@
   transition: 300ms;
   opacity: 0;
  }
-
-/* .fact-box-bull {
-  left: 5%;
-  transition: 500ms;
-}
-
-.fact-box-true {
-  left: 55%;
-  transition: 500ms;
-} */
-
 .results-box {
   position: absolute;
   left: 20%;
@@ -255,11 +245,11 @@
 
 .btn-next-show {
   background-color: #F27127;
-  height: 250px;
-  width: 350px;
+  height: 30%x;
+  width: 48%;
   opacity: 1;
   position: absolute;
-  left: 30%;
+  left: 26%;
   text-align: center;
   bottom: 40px;
   color: black;
@@ -270,7 +260,7 @@
   cursor: pointer;
   font-weight: 500;
   transition: background-color 0.3s, color 0.3s;
-  line-height: 5vw;
+  line-height: 10vw;
   box-shadow: 2px 2px 2px;
 }
 
@@ -332,7 +322,6 @@ h1 {
   transition: 1000ms;
 }
 
-
 .right-half {
   background-color: #7BA651;
   position: absolute;
@@ -342,7 +331,6 @@ h1 {
   text-align: left;
   transition: 1000ms;
 }
-
 
 .bull-whole {
   background-color: #8C2920;
