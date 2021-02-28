@@ -280,8 +280,7 @@ function trueWrong() {
 function zeroRestart(){
 
 }
-    
-
+  
 //hides wager-text, checks round, allows game to progress until round === 9, gives choice of 10 more or see thei stats   
 function roundCheck() {
     console.log('round ' + round);
