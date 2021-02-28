@@ -364,7 +364,7 @@ h1 {
 .bull-text {
   position: absolute;
   right: 0%;
-  bottom: 2%;
+  bottom: 8%;
   color: #F0F2F2  ;
   opacity: .08;
   font-size: 24vw;
@@ -375,7 +375,7 @@ h1 {
 .true-text {
 
   position: absolute;
-  bottom: 2%;  
+  bottom: 8%;  
   color: #F0F2F2;
   opacity: .1;
   font-size: 24vw;
