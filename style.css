@@ -255,13 +255,13 @@
 
 .btn-next-show {
   background-color: #F27127;
-  height: 16%;
-  width: 26%;
+  height: 40%;
+  width: 40%;
   opacity: 1;
   position: absolute;
-  left: 37%;
+  left: 30%;
   text-align: center;
-  bottom: 20%;
+  bottom: 10%;
   color: black;
   border: 10px solid black;
   font-family: 'Staatliches', cursive;  
@@ -364,7 +364,7 @@ h1 {
 .bull-text {
   position: absolute;
   right: 0%;
-  bottom: 8%;
+  bottom: 12%;
   color: #F0F2F2  ;
   opacity: .08;
   font-size: 24vw;
@@ -375,7 +375,7 @@ h1 {
 .true-text {
 
   position: absolute;
-  bottom: 8%;  
+  bottom: 12%;  
   color: #F0F2F2;
   opacity: .1;
   font-size: 24vw;
