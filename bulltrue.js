@@ -28,12 +28,14 @@ var q17 = new Question('FACT: There is an island off of Samoa where the likeliho
 var q18 = new Question('FACT: Casu Marzu cheese is purposely infested with maggots', 'true', 'TRUE...MAGGOTS', 'TRUE...UNFORTUNATELY');
 var q19 = new Question('FACT: During the casting phase for the Lord of the Rings movies, Nicholas Cage turned down the role of Aragorn and Sean Connery turned down the role of Gandalf', 'true', 'CORRECT!', 'NO, THAT\'S TRUE');
 var q20 = new Question('FACT: In the state of Wyoming hunters are required to fire on a Sasquatch if spotted', 'bull','CORRECT!', 'NO...WHO SHOOTS A SASQUATCH?');
+var q21 = new Question('FACT: Clint Eastwood\'s name is an anagram for \"old west action\'. It is his given name', 'true','CORRECT! Crazy, right?', 'Nope that\'s all true!');
 
-var questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20];
+var questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21];
 
 //randomize the questions array into a new array
 var questionsQueue = questions.sort(function(a, b){return 0.5 - Math.random()});
 var round;
+var lastRound = 9;
 var numCorrect = 0;
 var numWrong = 0;
 var clickedTrue = 0;
@@ -53,6 +55,7 @@ var scoreBox = document.getElementById('score-box');
 var answer = document.getElementById('answer');
 var answerFact = document.getElementById('answer-box-fact');
 var answerBox = document.querySelector('.answer-box');
+var bullOrTrue = document.getElementById('bull-or-true');
 var factBox = document.getElementById('fact-box');
 var resultsBox = document.getElementById('results-box');
 var scoreText = document.getElementById('score-text');
@@ -94,8 +97,8 @@ function init() {
         document.getElementById('wager-fact').textContent = questionsQueue[round].fact;
         factBox.style.display = "none";
         trueButton.classList.remove('btn-border');
-        document.querySelector('.bull-text').classList.add('text-selected');
-        document.querySelector('.true-text').classList.remove('text-selected');
+        document.querySelector('.bull-btn-text').classList.add('text-selected');
+        document.querySelector('.true-btn-text').classList.remove('text-selected');
         wagerSelect();
 }
 //what happens when they first click true
@@ -106,8 +109,8 @@ function init() {
         document.getElementById('wager-fact').textContent = questionsQueue[round].fact;
         factBox.style.display = "none";
         bullButton.classList.remove('btn-border');
-        document.querySelector('.true-text').classList.add('text-selected');
-        document.querySelector('.bull-text').classList.remove('text-selected'); 
+        document.querySelector('.true-btn-text').classList.add('text-selected');
+        document.querySelector('.bull-btn-text').classList.remove('text-selected'); 
         wagerSelect();       
    }
 
@@ -188,7 +191,7 @@ function handleSubmit(event) {
     }
 }
 
-// updates score, shows 'next fact' button, turns off other buttons
+// updates score, shows 'next' button, turns off other buttons
 function answerReveal() { 
     factBox.style.display = "none"
     document.querySelector('.wager-box').classList.toggle('wager-box-fade');
@@ -199,6 +202,8 @@ function answerReveal() {
 }
 
 function zeroedOut() {
+    round++;
+    lastRound = round + 9;
     document.getElementById('score-change').style.display = "none";
     nextButton.textContent = "TRY AGAIN";
     factBox.style.display = "none"
@@ -206,9 +211,10 @@ function zeroedOut() {
     // document.querySelector('.wager-box').classList.toggle('wager-box-fade');
     nextButton.style.display = "block";
     nextButton.classList.toggle('btn-next-show', true);
-    nextButton.addEventListener('click', zeroRestart);
+    nextButton.addEventListener('click', roundCheck);
     answerFact.textContent = "Zeroed Out...Game Over";
     answer.style.display = "none";
+    score = 1000;
 }
 
 function wrongAnswer () {
@@ -229,14 +235,14 @@ function rightAnswer () {
     scoreText.textContent = formatNumber(score);
     var wagerFormatted = formatNumber(wager);
     answer.textContent = questionsQueue[round].yep;
-    document.getElementById('score-change').textContent = `${wagerFormatted} POINTS ADDED`;
+    document.getElementById('score-change').textContent = `${wagerFormatted} POINTS ADDED!!!`;
 
 }
 
 function dryButtonStates () {
     document.querySelector('.answer-box').classList.remove('box-hide');
-    document.querySelector('.bull-text').classList.add('text-hide');
-    document.querySelector('.true-text').classList.add('text-hide');
+    document.querySelector('.bull-btn-text').classList.add('text-hide');
+    document.querySelector('.true-btn-text').classList.add('text-hide');
     answerReveal(); 
 }
 ///////player clicked TRUE correctly
@@ -244,6 +250,9 @@ function trueCorrect() {
     clickedTrue ++;
     trueButton.classList.remove('btn-border');
     bullButton.classList.add('true-whole');
+    bullOrTrue.textContent = `TRUE`
+    bullOrTrue.classList.remove('bull-text');
+    bullOrTrue.classList.add('true-text');
     dryButtonStates(); 
     rightAnswer();  
 }
@@ -254,6 +263,9 @@ function bullWrong() {
     clickedBull ++;
     bullButton.classList.remove('btn-border');
     bullButton.classList.add('true-whole');
+    bullOrTrue.textContent = `TRUE`
+    bullOrTrue.classList.remove('bull-text');
+    bullOrTrue.classList.add('true-text');
     dryButtonStates();
     wrongAnswer();
 }
@@ -263,6 +275,9 @@ function bullCorrect() {
     clickedBull ++;
     bullButton.classList.remove('btn-border');
     trueButton.classList.add('bull-whole');
+    bullOrTrue.textContent = `BULL`
+    bullOrTrue.classList.remove('ture-text');
+    bullOrTrue.classList.add('bull-text');
     dryButtonStates();
     rightAnswer();
 }
@@ -273,6 +288,9 @@ function trueWrong() {
     clickedTrue ++;
     trueButton.classList.remove('btn-border');
     trueButton.classList.add('bull-whole');
+    bullOrTrue.textContent = `BULL`
+    bullOrTrue.classList.remove('true-text');
+    bullOrTrue.classList.add('bull-text');
     dryButtonStates();
     wrongAnswer();
 }
@@ -283,19 +301,25 @@ function zeroRestart(){
   
 //hides wager-text, checks round, allows game to progress until round === 9, gives choice of 10 more or see thei stats   
 function roundCheck() {
-    console.log('round ' + round);
-    if (round < 9) {
+    console.log('round ' + round + ' last round = ' + lastRound);
+    if (round < lastRound) {
         resetter();
-    } else if (round === 9) {
-        factBox.style.display = "block";
-        wagerBox.style.display = "none";
-        factBox.addEventListener('click', displayResults);
-        factText.textContent = ('GAME OVER. Click this box to see your lie detection stats.');
-        }        
+    } else if (round === lastRound) {
+        // factBox.style.display = "block";
+        // wagerBox.style.display = "none";
+        // factBox.addEventListener('click', displayResults);
+        // factText.textContent = ('GAME OVER. Click this box to see your lie detection stats.');
+        displayResults();    
+    }        
     }
 
 //Advances round, updates wager options to reflect %'s of new score, hides buttons, creates slight time delay before nextRound is called
 function resetter() {
+    if (score === 0) {
+        score = score + 1000;
+    }
+    nextButton.textContent = 'NEXT';
+    scoreText.textContent = 'points: ' + score;
     document.querySelector('.fact-box').classList.add('box-hide');
     nextButton.style.display = "none";
     answerBox.classList.add('box-hide');
@@ -320,26 +344,31 @@ function newRound() {
     wagerScorebox.style.display = "none";
     bullButton.classList.remove('true-whole');
     trueButton.classList.remove('bull-whole');
-    document.querySelector('.bull-text').classList.remove('text-selected');
-    document.querySelector('.true-text').classList.remove('text-selected');
-    document.querySelector('.bull-text').classList.remove('text-hide');
-    document.querySelector('.true-text').classList.remove('text-hide');
+    document.querySelector('.bull-btn-text').classList.remove('text-selected');
+    document.querySelector('.true-btn-text').classList.remove('text-selected');
+    document.querySelector('.bull-btn-text').classList.remove('text-hide');
+    document.querySelector('.true-btn-text').classList.remove('text-hide');
     bullButton.addEventListener('click', callBull);
     trueButton.addEventListener('click', callTrue);
 }
 
 function displayResults() {
+    factBox.style.display = "block";
+    factText.textContent = ('GAME COMPLETED...THANK YOU FOR PLAYING BULLTUE!');
+    wagerBox.style.display = "none";
     scoreText.textContent= "POINTS: " + score;
     answerBox.style.display = "none";
     scoreBox.style.display = "none";
-    document.querySelector('.fact-box').style.display = "none";
+    // document.querySelector('.fact-box').style.display = "none";
     nextButton.style.display = "none";
     resultsBox.style.display = "block";
     document.getElementById('final-score').textContent = score;
     document.getElementById('gul').textContent = gul;
     document.getElementById('cyn').textContent = cyn;
-    document.getElementById('wrong').textContent = numWrong;
+    // document.getElementById('wrong').textContent = numWrong;
     document.getElementById('cyn').textContent = cyn;
     document.getElementById('true').textContent = clickedTrue;
     document.getElementById('bull').textContent = clickedBull;
+    document.getElementById('num-correct').textContent = numCorrect;
+    document.getElementById('num-wrong').textContent = numWrong;
     }
