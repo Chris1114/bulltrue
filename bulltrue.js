@@ -8,26 +8,26 @@ function Question(fact, answer, yep, nope) {
 
 }
 
-var q1 = new Question('FACT: Research suggests that 20% of Neanderthal DNA survives in modern humans', 'true', 'YEP, NEANDERTHALS ARE STILL KICKING AROUND', 'WRONG...THAT\'S ACTUALLY TRUE');
-var q2 = new Question('FACT: In accordance with his wishes, comedian George Carlin\'s ashes were encapsulated and fired from a cannon into the Pacific Ocean', 'bull', 'INDEED THAT IS BULL', 'NOPE...DIDN\'T HAPPEN' );
-var q3 = new Question('FACT: The company Tesla initially instructed its employees and customers to use \"Teslae\" for the plural form of \"Tesla\", but gave up when it failed to catch on', 'bull', 'CORRECT!', "WRONG...ELON\'S NOT THAT WEIRD");
-var q4 = new Question('FACT: Humans share 50% of their DNA with bananas', 'true','THAT IS CORRECT', 'NOPE, IT\'S ACTUALLY TRUE');   
+var q1 = new Question('FACT: Research suggests that 20% of Neanderthal DNA survives in modern humans.', 'true', 'YEP, NEANDERTHALS ARE STILL KICKING AROUND', 'WRONG...THAT\'S ACTUALLY TRUE');
+var q2 = new Question('FACT: In accordance with his wishes, comedian George Carlin\'s ashes were encapsulated and fired from a cannon into the Pacific Ocean.', 'bull', 'INDEED THAT IS BULL', 'NOPE...DIDN\'T HAPPEN' );
+var q3 = new Question('FACT: The company Tesla initially instructed employees and customers to use \"Teslae\" for the plural form of \"Tesla\", but gave up when it failed to catch on.', 'bull', 'CORRECT!', "WRONG...ELON\'S NOT THAT WEIRD");
+var q4 = new Question('FACT: Humans share 50% of their DNA with bananas.', 'true','THAT IS CORRECT', 'NOPE, IT\'S ACTUALLY TRUE');   
 var q5 = new Question('FACT: There actually was a Captain Morgan. He was known for ransacking Spanish ships in the Caribbean in the 1660\'s and 1670\'s.', 'true', 'CORRECT!!!', 'NOPE, THAT WAS TRUE');
-var q6 = new Question('FACT: Jack Daniel\'s was named after the independently wealthy woman who financed its launch: Jacquelline Danielle Motlow', 'bull', 'GOOD BS SNIFFING', 'SORRY...TOTAL BULL'); 
-var q7 = new Question('FACT: In 1963 a panda at the Shanghai Zoo died of spontaneous combustion', 'bull', 'WELL DONE...A COMPLETE LIE.', 'YOU BOUGHT THAT?');
-var q8 = new Question('FACT: Ravens in captivity can learn to \"talk\" better than parrots', 'true', 'TRUE...WELL DONE!', 'NO, THAT\'S TRUE');
-var q9 = new Question('FACT: A group of barracudas is called a battery', 'true', 'CORRECT! GOOD JOB', 'NOPE. THEY ARE ACTUALLY A BATTERY OF BARRACUDAS');                
-var q10 = new Question('FACT: Due to feuding brothers, the can opener was patented 5 years before the tin can', 'bull', ' CORRECT...NICE WORK!', 'SERIOUSLY?');
-var q11 = new Question('FACT: The world consumes about 6700 aluminum cans per second', 'true', 'YES. PER SECOND.', 'SORRY THAT\'S TRUE');
-var q12 = new Question('FACT: John William\'s iconic Star Wars theme was originally written for a movie that was shelved and later became "Cowboys vs. Aliens"', 'bull', 'GOOD SHOT!', 'CAN\'T WIN \'EM ALL');
-var q13 = new Question('FACT: Ants outweigh humans on the planet', 'true', 'YEP. THAT\'S A LOT OF ANTS', 'WRONG...THEY OUTNUMBER US AND OUTWEIGH US');
-var q14 = new Question('FACT: President Warren Harding, who died in office in 1923, is the great-grandfather of figure skater Tonya Harding', 'bull','CORRECT!...NOWHERE NEAR TRUE', 'NOPE, NOT TRUE' );
-var q15 = new Question('FACT: Twisted Sister frontman Dee Snider got his start singing backup vocals for artists such as Hall and Oats and Jackson Browne', 'bull', 'CORRECT!!!', 'HALL AND OATS? REALLY?');
-var q16 = new Question('FACT: Carly Simon and Paul Simon are cousins and are the neice and nephew of Richard Simon of Simon and Schuster', 'bull', 'CORRECT YOU ARE', 'NOPE, IT\'S BULL');
-var q17 = new Question('FACT: There is an island off of Samoa where the likelihood of conjoined twins is triple that of the rest of the world', 'bull', 'GREAT SHOT!!!', 'NO. NOT TRUE.');
-var q18 = new Question('FACT: Casu Marzu cheese is purposely infested with maggots', 'true', 'TRUE...MAGGOTS', 'TRUE...UNFORTUNATELY');
-var q19 = new Question('FACT: During the casting phase for the Lord of the Rings movies, Nicholas Cage turned down the role of Aragorn and Sean Connery turned down the role of Gandalf', 'true', 'CORRECT!', 'NO, THAT\'S TRUE');
-var q20 = new Question('FACT: In the state of Wyoming hunters are required to fire on a Sasquatch if spotted', 'bull','CORRECT!', 'NO...WHO SHOOTS A SASQUATCH?');
+var q6 = new Question('FACT: Jack Daniel\'s was named after the independently wealthy woman who financed its launch: Jacquelline Danielle Motlow.', 'bull', 'GOOD BS SNIFFING', 'SORRY...TOTAL BULL'); 
+var q7 = new Question('FACT: In 1963 a panda at the Shanghai Zoo died of spontaneous combustion.', 'bull', 'WELL DONE...A COMPLETE LIE.', 'YOU BOUGHT THAT?');
+var q8 = new Question('FACT: Ravens in captivity can learn to \"talk\" better than parrots.', 'true', 'TRUE...WELL DONE!', 'NO, THAT\'S TRUE');
+var q9 = new Question('FACT: A group of barracudas is called a battery.', 'true', 'CORRECT! GOOD JOB', 'NOPE. THEY ARE ACTUALLY A BATTERY OF BARRACUDAS');                
+var q10 = new Question('FACT: Due to feuding brothers, the can opener was patented 5 years before the tin can.', 'bull', ' CORRECT...NICE WORK!', 'SERIOUSLY?');
+var q11 = new Question('FACT: The world consumes about 6700 aluminum cans per second.', 'true', 'YES. PER SECOND.', 'SORRY THAT\'S TRUE');
+var q12 = new Question('FACT: John William\'s iconic Star Wars theme was originally written for a movie that was shelved and later became "Cowboys vs. Aliens."', 'bull', 'GOOD SHOT!', 'CAN\'T WIN \'EM ALL');
+var q13 = new Question('FACT: Ants outweigh humans on the planet.', 'true', 'YEP. THAT\'S A LOT OF ANTS', 'WRONG...THEY OUTNUMBER US AND OUTWEIGH US');
+var q14 = new Question('FACT: President Warren Harding, who died in office in 1923, is the great-grandfather of figure skater Tonya Harding.', 'bull','CORRECT!...NOWHERE NEAR TRUE', 'NOPE, NOT TRUE' );
+var q15 = new Question('FACT: Twisted Sister frontman Dee Snider got his start singing backup vocals for artists such as Hall and Oats and Jackson Browne.', 'bull', 'CORRECT!!!', 'HALL AND OATS? REALLY?');
+var q16 = new Question('FACT: Carly Simon and Paul Simon are cousins and are the neice and nephew of Richard Simon of Simon and Schuster.', 'bull', 'CORRECT YOU ARE', 'NOPE, IT\'S BULL');
+var q17 = new Question('FACT: There is an island off of Samoa where the likelihood of conjoined twins is triple that of the rest of the world.', 'bull', 'GREAT SHOT!!!', 'NO. NOT TRUE.');
+var q18 = new Question('FACT: Casu Marzu cheese is purposely infested with maggots.', 'true', 'TRUE...MAGGOTS', 'TRUE...UNFORTUNATELY');
+var q19 = new Question('FACT: During the casting phase for the Lord of the Rings movies, Nicholas Cage turned down the role of Aragorn and Sean Connery turned down the role of Gandalf.', 'true', 'CORRECT!', 'NO, THAT\'S TRUE');
+var q20 = new Question('FACT: In the state of Wyoming hunters are required to fire on a Sasquatch if spotted.', 'bull','CORRECT!', 'NO...WHO SHOOTS A SASQUATCH?');
 var q21 = new Question('FACT: Clint Eastwood\'s name is an anagram for \"old west action\". It is his given name.', 'true','CORRECT! Crazy, right?', 'Nope that\'s all true!');
 
 var questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21];
