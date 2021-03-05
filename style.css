@@ -73,7 +73,7 @@
   height: auto;
   position: absolute;
   left: 10%;
-  top: 15%;
+  top: 20%;
   background-color: #F28A2E;
   color: black;
   width: 80%;
@@ -96,7 +96,7 @@
   height: auto;
   position: absolute;
   left: 10%;
-  top: 15%;
+  top: 20%;
   background-color: #F28A2E;
   color: black;
   width: 80%;
@@ -121,7 +121,7 @@
 .results-box {
   position: absolute;
   left: 5%;
-  bottom: 25%;
+  top: 20%;
   height: auto;
   background-color: #F28A2E;
   color: black;
@@ -150,7 +150,7 @@
   width: 42%;
   height: auto;
   margin: 0 auto;
-  padding: 20px;
+  padding: 5px;
   font-family: 'Staatliches', cursive;  
   font-size: 2.5vw;
   font-weight: 100;
@@ -165,7 +165,7 @@
   height: auto;
   position: absolute;
   left: 10%;
-  top: 15%;
+  top: 20%;
   background-color: #F28A2E;
   color: black;
   width: 80%;
@@ -188,7 +188,7 @@
   height: auto;
   position: absolute;
   left: 10%;
-  top: 15%;
+  top: 20%;
   background-color: #F28A2E;
   color: rgb(107, 101, 101);
   width: 80%;
@@ -199,7 +199,7 @@
   font-weight: 100;
   text-align: center;
   opacity: 0;
-  transition: 1000ms;
+  transition: 300ms;
   border: 2px solid black;
   padding: 10px 10px 10px 10px;
   box-shadow: 2px 2px 2px;
@@ -218,7 +218,7 @@
   letter-spacing: 1px;
   font-weight: 100;
   position: relative;
-  text-shadow: lightgrey;
+  text-shadow: 2px 2px black;
 }
 
 .bull-text {
@@ -229,7 +229,7 @@
   letter-spacing: 1px;
   font-weight: 100;
   position: relative;
-  text-shadow: lightgrey;
+  text-shadow: 2px 2px black;
 }
 
 
@@ -445,6 +445,7 @@ form {
 	padding:10px 6px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffee66;
+  margin: 4px 2px;
 }
 	.buttons:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
@@ -680,7 +681,7 @@ form {
     font-weight: 100;
     text-align: center;
     opacity: 0;
-    transition: 1000ms;
+    transition: 300ms;
     border: 2px solid black;
     padding: 10px 10px 10px 10px;
     box-shadow: 2px 2px 2px;
@@ -903,6 +904,8 @@ form {
 
   form {
     padding: auto;
+    width: fit-content;
+    margin: auto;
   }
   
   .buttons {

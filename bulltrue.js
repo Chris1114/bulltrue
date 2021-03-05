@@ -213,6 +213,7 @@ function zeroedOut() {
     nextButton.classList.toggle('btn-next-show', true);
     nextButton.addEventListener('click', roundCheck);
     answerFact.textContent = "Zeroed Out...Game Over";
+    document.getElementById('score-change').style.display = 'block';
     answer.style.display = "none";
     score = 1000;
 }
@@ -220,10 +221,11 @@ function zeroedOut() {
 function wrongAnswer () {
     numWrong ++;
     score = score - wager;
-    scoreText.textContent = formatNumber(score);
+    scoreText.textContent = "SCORE: " + formatNumber(score);
     var wagerFormatted = formatNumber(wager);
     answer.textContent = questionsQueue[round].nope;
     document.getElementById('score-change').textContent = `${wagerFormatted} POINTS DEDUCTED`;
+    document.getElementById('score-change').style.display = 'block';
     if (score === 0) {
         zeroedOut();
     }
@@ -232,7 +234,7 @@ function wrongAnswer () {
 function rightAnswer () {
     numCorrect ++;
     score = score + wager;
-    scoreText.textContent = formatNumber(score);
+    scoreText.textContent = "SCORE: " + formatNumber(score);
     var wagerFormatted = formatNumber(wager);
     answer.textContent = questionsQueue[round].yep;
     document.getElementById('score-change').textContent = `${wagerFormatted} POINTS ADDED!!!`;
@@ -250,7 +252,7 @@ function trueCorrect() {
     clickedTrue ++;
     trueButton.classList.remove('btn-border');
     bullButton.classList.add('true-whole');
-    bullOrTrue.textContent = `TRUE`
+    bullOrTrue.textContent = `TRUE`;
     bullOrTrue.classList.remove('bull-text');
     bullOrTrue.classList.add('true-text');
     dryButtonStates(); 
@@ -263,7 +265,7 @@ function bullWrong() {
     clickedBull ++;
     bullButton.classList.remove('btn-border');
     bullButton.classList.add('true-whole');
-    bullOrTrue.textContent = `TRUE`
+    bullOrTrue.textContent = `TRUE`;
     bullOrTrue.classList.remove('bull-text');
     bullOrTrue.classList.add('true-text');
     dryButtonStates();
@@ -275,7 +277,7 @@ function bullCorrect() {
     clickedBull ++;
     bullButton.classList.remove('btn-border');
     trueButton.classList.add('bull-whole');
-    bullOrTrue.textContent = `BULL`
+    bullOrTrue.textContent = `BULL`;
     bullOrTrue.classList.remove('ture-text');
     bullOrTrue.classList.add('bull-text');
     dryButtonStates();
@@ -288,7 +290,7 @@ function trueWrong() {
     clickedTrue ++;
     trueButton.classList.remove('btn-border');
     trueButton.classList.add('bull-whole');
-    bullOrTrue.textContent = `BULL`
+    bullOrTrue.textContent = `BULL`;
     bullOrTrue.classList.remove('true-text');
     bullOrTrue.classList.add('bull-text');
     dryButtonStates();
@@ -319,7 +321,7 @@ function resetter() {
         score = score + 1000;
     }
     nextButton.textContent = 'NEXT';
-    scoreText.textContent = 'points: ' + score;
+    scoreText.textContent = "SCORE: " + formatNumber(score);
     document.querySelector('.fact-box').classList.add('box-hide');
     nextButton.style.display = "none";
     answerBox.classList.add('box-hide');
@@ -356,13 +358,13 @@ function displayResults() {
     factBox.style.display = "block";
     factText.textContent = ('GAME COMPLETED...THANK YOU FOR PLAYING BULLTUE!');
     wagerBox.style.display = "none";
-    scoreText.textContent= "POINTS: " + score;
+    scoreText.textContent= "SCORE: " + formatNumber(score);
     answerBox.style.display = "none";
     scoreBox.style.display = "none";
     // document.querySelector('.fact-box').style.display = "none";
     nextButton.style.display = "none";
     resultsBox.style.display = "block";
-    document.getElementById('final-score').textContent = score;
+    document.getElementById('final-score').textContent = formatNumber(score);
     document.getElementById('gul').textContent = gul;
     document.getElementById('cyn').textContent = cyn;
     // document.getElementById('wrong').textContent = numWrong;
