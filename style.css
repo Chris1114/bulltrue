@@ -600,7 +600,7 @@ form {
   .results-box {
     position: absolute;
     left: 5%;
-    top: 20%;
+    top: 30%;
     height: auto;
     background-color: #F28A2E;
     color: black;
@@ -617,10 +617,7 @@ form {
     padding: 10px 10px 10px 10px;
     box-shadow: 2px 2px 2px;
     line-height: normal;
-  }
-  
-  
-  
+  } 
   
   .score-box{
     position: absolute;

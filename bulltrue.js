@@ -356,7 +356,7 @@ function newRound() {
 
 function displayResults() {
     factBox.style.display = "block";
-    factText.textContent = ('GAME COMPLETED...THANK YOU FOR PLAYING BULLTUE!');
+    factText.textContent = ('GAME COMPLETED...THANK YOU FOR PLAYING BULLTRUE!');
     wagerBox.style.display = "none";
     scoreText.textContent= "SCORE: " + formatNumber(score);
     answerBox.style.display = "none";
