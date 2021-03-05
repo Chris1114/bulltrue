@@ -43,7 +43,7 @@ var clickedBull = 0;
 var cyn = 0;//cynical-bullWrong counter
 var gul = 0;//gullible-trueWrong counter
 var playerAnswer;
-var score = 971;
+var score = 976;
 var wager25;
 var wager50;
 var wager75;
