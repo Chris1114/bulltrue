@@ -28,7 +28,7 @@ var q17 = new Question('FACT: There is an island off of Samoa where the likeliho
 var q18 = new Question('FACT: Casu Marzu cheese is purposely infested with maggots', 'true', 'TRUE...MAGGOTS', 'TRUE...UNFORTUNATELY');
 var q19 = new Question('FACT: During the casting phase for the Lord of the Rings movies, Nicholas Cage turned down the role of Aragorn and Sean Connery turned down the role of Gandalf', 'true', 'CORRECT!', 'NO, THAT\'S TRUE');
 var q20 = new Question('FACT: In the state of Wyoming hunters are required to fire on a Sasquatch if spotted', 'bull','CORRECT!', 'NO...WHO SHOOTS A SASQUATCH?');
-var q21 = new Question('FACT: Clint Eastwood\'s name is an anagram for \"old west action\'. It is his given name.', 'true','CORRECT! Crazy, right?', 'Nope that\'s all true!');
+var q21 = new Question('FACT: Clint Eastwood\'s name is an anagram for \"old west action\". It is his given name.', 'true','CORRECT! Crazy, right?', 'Nope that\'s all true!');
 
 var questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21];
 
