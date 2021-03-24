@@ -10,7 +10,7 @@ function Question(fact, answer, yep, nope) {
 
 var q1 = new Question('FACT: Research suggests that 20% of Neanderthal DNA survives in modern humans.', 'true', 'YEP, NEANDERTHALS ARE STILL KICKING AROUND', 'WRONG...THAT\'S ACTUALLY TRUE');
 var q2 = new Question('FACT: In accordance with his wishes, comedian George Carlin\'s ashes were encapsulated and fired from a cannon into the Pacific Ocean.', 'bull', 'INDEED THAT IS BULL', 'NOPE...DIDN\'T HAPPEN' );
-var q3 = new Question('FACT: The company Tesla initially instructed employees and customers to use \"Teslae\" for the plural form of \"Tesla\", but gave up when it failed to catch on.', 'bull', 'CORRECT!', "WRONG...ELON\'S NOT THAT WEIRD");
+var q3 = new Question('FACT: The company Tesla initially instructed employees and customers to use \"Teslae\" for the plural form of \"Tesla\" but gave up when it failed to catch on.', 'bull', 'CORRECT!', "WRONG...ELON\'S NOT THAT WEIRD");
 var q4 = new Question('FACT: Humans share 50% of their DNA with bananas.', 'true','THAT IS CORRECT', 'NOPE, IT\'S ACTUALLY TRUE');   
 var q5 = new Question('FACT: There actually was a Captain Morgan. He was known for ransacking Spanish ships in the Caribbean in the 1660\'s and 1670\'s.', 'true', 'CORRECT!!!', 'NOPE, THAT WAS TRUE');
 var q6 = new Question('FACT: Jack Daniel\'s was named after the independently wealthy woman who financed its launch: Jacquelline Danielle Motlow.', 'bull', 'GOOD BS SNIFFING', 'SORRY...TOTAL BULL'); 
@@ -32,9 +32,10 @@ var q21 = new Question('FACT: Clint Eastwood\'s name is an anagram for \"old wes
 
 var questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21];
 
-//randomize the questions array into a new array
-var questionsQueue = questions.sort(function(a, b){return 0.5 - Math.random()});
-var round;
+//randomize the questions array into a new array of objects
+var questionsQueue;
+var gameRound = 0;
+var globalRound = localStorage.globalRound;
 var lastRound = 9;
 var numCorrect = 0;
 var numWrong = 0;
@@ -61,6 +62,7 @@ var resultsBox = document.getElementById('results-box');
 var scoreText = document.getElementById('score-text');
 var factText = document.getElementById('fact-text');
 var wagerScorebox = document.getElementById('wager-scorebox');
+var scoreChange = document.getElementById('score-change');
 // vars for buttons
 var bullButton = document.getElementById('btn-bull');
 var trueButton = document.getElementById('btn-true');
@@ -71,22 +73,42 @@ var btn75 = document.getElementById('btn-75');
 var btn100 = document.getElementById('btn-100');
 var selected = "none";
 
+//IFFE for localStorage check, either resumes or starts new
+(function localStorageCheckUser() {
+    // localStorage.removeItem('questionsQueue');
+    // localStorage.removeItem('globalRound');
+    if(localStorage.globalRound) {
+    questionsQueue = JSON.parse(localStorage.questionsQueue);
+    // globalRound++;
+    // localStorage.setItem('globalRound', globalRound);
+    console.log('IFFE ran!!!!!!!')
+    } else {
+        questionsQueue = questions.sort(function(a, b){return 0.5 - Math.random()});
+        globalRound = 0;
+        localStorage.setItem('questionsQueue', JSON.stringify(questionsQueue));
+        localStorage.setItem('globalRound', globalRound);
+        }
+    })();
+
 init();
 
 function init() {
+    console.log(`globalRound @ init: ${localStorage.globalRound}`);
+    console.log(`gameRound @ init: ${gameRound}`);
+    gameRound = 0;
     calculateWagers();
-    round = 0;
     wagerBox.style.display = "none";
     scoreBox.style.display = "block";
     scoreText.textContent = "SCORE: " + formatNumber(score);
     wagerScorebox.style.display = "none";
-    factBox.style.display = "block";
     answerBox.classList.add('box-hide');
     resultsBox.style.display = "none";
     bullButton.addEventListener('click', callBull);
     trueButton.addEventListener('click', callTrue);
     nextButton.style.display = "none";
-    factText.textContent = questionsQueue[round].fact;
+    factBox.style.display = "block";
+    factText.style.display = "block";
+    factText.textContent = questionsQueue[globalRound].fact;
     }
  
 //what happens when they first click bull 
@@ -94,7 +116,7 @@ function init() {
         playerAnswer = "bull";
         bullButton.classList.add('btn-border');
         wagerBox.style.display = "block";
-        document.getElementById('wager-fact').textContent = questionsQueue[round].fact;
+        document.getElementById('wager-fact').textContent = questionsQueue[globalRound].fact;
         factBox.style.display = "none";
         trueButton.classList.remove('btn-border');
         document.querySelector('.bull-btn-text').classList.add('text-selected');
@@ -106,7 +128,7 @@ function init() {
         playerAnswer = "true";
         trueButton.classList.add('btn-border');
         wagerBox.style.display = "block";
-        document.getElementById('wager-fact').textContent = questionsQueue[round].fact;
+        document.getElementById('wager-fact').textContent = questionsQueue[globalRound].fact;
         factBox.style.display = "none";
         bullButton.classList.remove('btn-border');
         document.querySelector('.true-btn-text').classList.add('text-selected');
@@ -169,7 +191,6 @@ function handleSubmit(event) {
     trueButton.removeEventListener('click', callTrue);
     if (selected === 'none') {
         alert('You must make a wager')
-        console.log('you can do it here');
         if (playerAnswer === 'true') {
             callTrue();
         } else if (playerAnswer === 'bull') {
@@ -177,15 +198,15 @@ function handleSubmit(event) {
         }
     }
     else if (playerAnswer === 'true') {
-        if (questionsQueue[round].answer === 'true') { 
+        if (questionsQueue[globalRound].answer === 'true') { 
             trueCorrect();
-        } else if (questionsQueue[round].answer === 'bull') {
+        } else if (questionsQueue[globalRound].answer === 'bull') {
             trueWrong();    
         };
     } else if (playerAnswer === 'bull') {
-        if (questionsQueue[round].answer === 'bull') { 
+        if (questionsQueue[globalRound].answer === 'bull') { 
             bullCorrect();
-        } else if (questionsQueue[round].answer === 'true') {
+        } else if (questionsQueue[globalRound].answer === 'true') {
             bullWrong();
         };
     }
@@ -198,24 +219,7 @@ function answerReveal() {
     nextButton.style.display = "block";
     nextButton.classList.toggle('btn-next-show', true);
     nextButton.addEventListener('click', roundCheck)
-    answerFact.textContent = questionsQueue[round].fact;
-}
-
-function zeroedOut() {
-    round++;
-    lastRound = round + 9;
-    document.getElementById('score-change').style.display = "none";
-    nextButton.textContent = "TRY AGAIN";
-    factBox.style.display = "none"
-    wagerBox.style.display = "none"
-    // document.querySelector('.wager-box').classList.toggle('wager-box-fade');
-    nextButton.style.display = "block";
-    nextButton.classList.toggle('btn-next-show', true);
-    nextButton.addEventListener('click', roundCheck);
-    answerFact.textContent = "Zeroed Out...Game Over";
-    document.getElementById('score-change').style.display = 'block';
-    answer.style.display = "none";
-    score = 1000;
+    answerFact.textContent = questionsQueue[globalRound].fact;
 }
 
 function wrongAnswer () {
@@ -223,7 +227,7 @@ function wrongAnswer () {
     score = score - wager;
     scoreText.textContent = "SCORE: " + formatNumber(score);
     var wagerFormatted = formatNumber(wager);
-    answer.textContent = questionsQueue[round].nope;
+    answer.textContent = questionsQueue[globalRound].nope;
     document.getElementById('score-change').textContent = `${wagerFormatted} POINTS DEDUCTED`;
     document.getElementById('score-change').style.display = 'block';
     if (score === 0) {
@@ -236,9 +240,9 @@ function rightAnswer () {
     score = score + wager;
     scoreText.textContent = "SCORE: " + formatNumber(score);
     var wagerFormatted = formatNumber(wager);
-    answer.textContent = questionsQueue[round].yep;
-    document.getElementById('score-change').textContent = `${wagerFormatted} POINTS ADDED!!!`;
-
+    answer.textContent = questionsQueue[globalRound].yep;
+    scoreChange.style.display = "block";
+    scoreChange.textContent = `${wagerFormatted} POINTS ADDED!!!`;
 }
 
 function dryButtonStates () {
@@ -297,23 +301,45 @@ function trueWrong() {
     wrongAnswer();
 }
 
-function zeroRestart(){
-
-}
-  
-//hides wager-text, checks round, allows game to progress until round === 9, gives choice of 10 more or see thei stats   
+//hides wager-text, checks round, allows game to progress until round === 9, 
 function roundCheck() {
-    console.log('round ' + round + ' last round = ' + lastRound);
-    if (round < lastRound) {
-        resetter();
-    } else if (round === lastRound) {
-        // factBox.style.display = "block";
-        // wagerBox.style.display = "none";
-        // factBox.addEventListener('click', displayResults);
-        // factText.textContent = ('GAME OVER. Click this box to see your lie detection stats.');
-        displayResults();    
-    }        
-    }
+    if (gameRound < 9) {
+            gameRound++;
+            resetter();
+    } else if (gameRound === 9) {
+            quitOrPlayAgain()   };        
+    }   
+
+function zeroedOut() {
+    // globalRound++;
+    // localStorage.setItem('globalRound', globalRound);
+    document.getElementById('score-change').style.display = "none";
+    nextButton.textContent = "TRY AGAIN";
+    factBox.style.display = "none"
+    wagerBox.style.display = "none"
+    nextButton.style.display = "block";
+    nextButton.classList.toggle('btn-next-show', true);
+    nextButton.addEventListener('click', newGame);
+    answerFact.textContent = "Zeroed Out...Game Over";
+    answer.style.display = "none";
+    score = 1000;
+}
+
+ function quitOrPlayAgain() {
+    bullButton.classList.remove('true-whole');
+    trueButton.classList.remove('bull-whole');
+    document.querySelector('.bull-btn-text').classList.remove('text-hide');
+    document.querySelector('.true-btn-text').classList.remove('text-hide');
+    document.querySelector('.true-btn-text').classList.add('text-selected');
+    document.querySelector('.bull-btn-text').classList.add('text-selected');
+    document.querySelector('.bull-btn-text').textContent = 'STATS';
+    document.querySelector('.true-btn-text').textContent = 'RETRY';
+    bullButton.addEventListener('click', displayResults);
+    trueButton.addEventListener('click', newGame);
+    nextButton.style.display = "none";
+    answerBox.textContent = ('GAME OVER. VIEW STATS or TRY AGAIN');
+
+ }   
 
 //Advances round, updates wager options to reflect %'s of new score, hides buttons, creates slight time delay before nextRound is called
 function resetter() {
@@ -325,8 +351,9 @@ function resetter() {
     document.querySelector('.fact-box').classList.add('box-hide');
     nextButton.style.display = "none";
     answerBox.classList.add('box-hide');
-    round ++;
-    selected = "none";
+    globalRound++;
+    localStorage.setItem('globalRound', globalRound);    
+    // selected = "none";
     delayer();
 }
 
@@ -337,13 +364,19 @@ function delayer() {
 //sets up next round (like init)
 function newRound() {
     calculateWagers();
+    resetBigButtons();
     document.querySelector('.fact-box').classList.remove('box-hide');
-    factText.textContent = questionsQueue[round].fact;
     factBox.style.display = "block";
+    factText.textContent = questionsQueue[globalRound].fact;
     answerBox.classList.add('box-hide');
     document.querySelector('.wager-box').classList.toggle('wager-box-fade');
     wagerBox.style.display = "none";
     wagerScorebox.style.display = "none";
+    console.log(`globalRound @newRound: ${localStorage.globalRound}`);
+    console.log(`gameRound @ newRound: ${gameRound}`);
+}
+
+function resetBigButtons() {
     bullButton.classList.remove('true-whole');
     trueButton.classList.remove('bull-whole');
     document.querySelector('.bull-btn-text').classList.remove('text-selected');
@@ -352,6 +385,17 @@ function newRound() {
     document.querySelector('.true-btn-text').classList.remove('text-hide');
     bullButton.addEventListener('click', callBull);
     trueButton.addEventListener('click', callTrue);
+}
+
+//resets score,big buttons, gameRound,roundCheck
+function newGame () {
+    score = 1000;
+    gameRound = 0;
+    bullButton.removeEventListener('click', displayResults);
+    trueButton.removeEventListener('click', newGame);
+    document.querySelector('.bull-btn-text').textContent = 'BULL';
+    document.querySelector('.true-btn-text').textContent = 'TRUE';
+    resetter ();
 }
 
 function displayResults() {
